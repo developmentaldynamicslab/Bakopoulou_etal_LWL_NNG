@@ -41,7 +41,7 @@ setwd("~/Larissa/Research/_Projects_and_Writing/ allShapeBias/ENNG_ERC/GitHub/EN
 
 #### Import the looking and NNG selection data
 #### #################################See NAME OF README FILE for more information
-Data <- readRDS('data//ENNG_noWarmup_V7_wLook_switch.rds')
+Data <- readRDS('data//Data_public.rds')
 
 #### Clean the data removing incomplete trials
 Data <- Data %>%

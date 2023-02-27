@@ -36,9 +36,6 @@ library(see)
 #### in the analyses. It combines the coded looking data and an excel file of participant
 #### information.
 
-#### edit the following to point to your desktop location for the GitHub repository
-setwd("~/Larissa/Research/_Projects_and_Writing/ allShapeBias/ENNG_ERC/GitHub/ENNG")
-
 #### Import the looking and NNG selection data
 #### #################################See NAME OF README FILE for more information
 Data <- readRDS('data//Data_public.rds')

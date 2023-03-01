@@ -3,7 +3,7 @@ Data, coding manual and full analysis scripts for Bakapoulou, Lorenz, Forbes, Tr
 
 Open the project to set the working directory and start analysis
 
-What is in this repo?
+**What is in this repo?**
 
 The scripts are named accordingly for the main analysis or the supplemental. 
 
@@ -14,7 +14,7 @@ The file "…." is the script with the analyses reported in the supplemental.
 
 
 
-Some explanation of the variables included in the dataset 
+**Some explanation of the variables included in the dataset **
 
 ID: participants code 
 OCDI_2_10: Productive noun vocabulary 
@@ -28,6 +28,7 @@ Final_Selection: the choice of object that children picked
 Name_Start: Identifying when the naming event happens 
 Looking_Switch: Identifying if children switch from Left(L), Right(R)
 
-Questions?
+**Questions?**
+
 Contact us!
 

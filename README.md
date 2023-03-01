@@ -14,7 +14,7 @@ The file "…." is the script with the analyses reported in the supplemental.
 
 
 
-**Some explanation of the variables included in the dataset **
+**Some explanation of the variables included in the dataset**
 
 ID: participants code 
 OCDI_2_10: Productive noun vocabulary 

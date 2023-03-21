@@ -56,7 +56,7 @@ part_info  <- part_info  %>%
          !ID == "26ENNGxx049B",
          !ID == "29ENNGxx074G") 
 
-#### Recode object order information 
+#### Recode object order information to create blocks matching order of presentation of the test sets
 part_info <- part_info %>% 
   mutate(block1=substr(Novel_Object_Order,1,1),
          block2=substr(Novel_Object_Order,2,2),
@@ -75,7 +75,7 @@ part_info_Order <- part_info %>%
 #### create vocabulary groups
 #### break used is based on the same percentage of nouns known on OCDI
 #### as Samuelson and Smith (1999) used for MBCDI
-#### Most analyses are run with vocabulary as a continuious variable
+#### Most analyses are run with vocabulary as a continuous variable
 #### but these groups are sometimes used for visualization
 part_info$Vgrp <- ifelse(part_info$OCDI_2_10 %in% 0:93, "Low",
                          ifelse(part_info$OCDI_2_10 %in% 94:194, "High",0))
@@ -415,7 +415,7 @@ proplookmodel_before <- glmmTMB(cbind(SamplesInAOI, SamplesTotal - SamplesInAOI)
                                 data = Before_LookingMdata) 
 
 summary(proplookmodel_before)
-DHARMa::simulateResiduals(proplookmodel_before, plot = T) 
+DHARMa::simulateResiduals(proplookmodel_before, plot = T) # be aware you might be prompted to install patchwork 
 performance::check_model(proplookmodel_before)
 performance::posterior_predictive_check(proplookmodel_before) # blowup of Posterior Predictives Check
 library(faraway)
@@ -650,7 +650,7 @@ selectionmodel_A2 <- glmmTMB(Final_Selection ~ Prop*OCDI_2_10_sc,
 
 summary(selectionmodel_A2)
 DHARMa::simulateResiduals(selectionmodel_A2, plot = T) 
-
+###Comparing the two models 
 anova(selectionmodel_A2, selectionmodel_A) # model results nearly identical, sticking with random effect as in other looking models
 #### Final After selection model
 # Family: binomial  ( logit )
@@ -953,12 +953,12 @@ DHARMa::simulateResiduals(Transitions_Model_2, plot = T)
 # ---
 #   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-
+###Comparing the two models 
 anova(Transitions_Model_2, Transitions_Model)
 #### Models not significantly different
 
 #### Dropping Final Selection 
-#### Model predicting of mean number of transitions by vocabulary (continuous)and Final selection ONLY
+#### Model predicting of mean number of transitions by vocabulary (continuous)
 Transitions_Model_3 <- glmmTMB(Mean_trans ~ OCDI_2_10_sc+ (1|ID),
                                             family = Gamma(link = 'log'),
                                             data=Full_MeanTransitions_NoOutlier)
@@ -989,7 +989,7 @@ DHARMa::simulateResiduals(Transitions_Model_3, plot = T)
 #   ---
 #   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-
+###Comparing the two models 
 anova(Transitions_Model_3, Transitions_Model_2)
 #### models not different so going with the the simpler model, DHARMa looks better too. 
 
@@ -1108,7 +1108,7 @@ summary(RT_logmodel2)
 # OCDI_2_10_sc:Final_Selections  -0.04469    0.16610 124.32437  -0.269  0.78835    
 # ---
 # Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
+###Comparing the two models 
 anova(RT_logmodel, RT_logmodel2)
 #### models not different, drop NS switch object
 
@@ -1116,7 +1116,7 @@ RT_logmodel3 <- lmer(MeanRTs ~ OCDI_2_10_sc+
                       (1|ID),
                     data = ReactionTimedata_Mean_part)
 summary(RT_logmodel3)
-
+###Comparing the two models 
 anova(RT_logmodel3, RT_logmodel2)
 #### models not different 
 
@@ -1317,7 +1317,7 @@ DHARMa::simulateResiduals(TouchModel_2, plot = T)
 # ---
 #   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-
+###Comparing the two models 
 anova(TouchModel_2,TouchModel)
 #### Anova shows no difference and model without Final selection has lower AIC. 
 
@@ -1335,7 +1335,7 @@ DHARMa::simulateResiduals(TouchModel_3, plot = T)
 # object       39.934  2   2.13e-09 ***
 #   ---
 #   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
+###Comparing the two models 
 anova(TouchModel_3,TouchModel_2)
 
 #### Convert names for plot

@@ -44,3 +44,7 @@ Looking_Switch: Identifying if children switch from Left(L), Right(R)
 
 Contact us!
 
+M.Bakopoulou@uea.ac.uk 
+
+L.samuelson@uea.ac.uk
+

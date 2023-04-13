@@ -10,7 +10,7 @@ The scripts are named accordingly for the main analysis or the supplemental.
 The file "Complete Analysis" is the script with the analyses reported in the paper.
 To work on this script, you will need the “Data_public.rds” file which has all the looking and NNG selection data and the “OCDI_GENDER_CM.csv” file which has all the participant information including vocabulary and gender
 
-The file "…." is the script with the analyses reported in the supplemental.
+The file "Supplemental_Complete_Analysis" is the script with the analyses reported in the supplemental.
 
 
 

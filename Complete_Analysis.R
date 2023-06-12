@@ -37,7 +37,7 @@ library(see)
 #### information.
 
 #### Import the looking and NNG selection data
-#### #################################See NAME OF README FILE for more information
+#### #################################See README.md for more information
 Data <- readRDS('data//Data_public.rds')
 
 #### Clean the data removing incomplete trials

@@ -45,7 +45,7 @@ library(ggdist)
 
 #### Import the looking and NNG selection data
 #### See NAME OF README FILE for more information ################################################# update name
-Data <- readRDS('data//ENNG_noWarmup_V7_wLook_switch.rds') #likely need to set working directory first.
+Data <- readRDS('data//Data_public.rds') #likely need to set working directory first.
 
 #### Clean the data removing incomplete trials
 Data <- Data %>%
